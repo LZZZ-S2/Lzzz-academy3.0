@@ -243,7 +243,7 @@
 
   <header>
     <h1>LZZZ Academy</h1>
-    <p>Unlock your potential — or at least your Rizz.</p>
+    <p>Unlock your potential.</p>
     <nav>
       <button onclick="openModal('login')" aria-haspopup="dialog" aria-controls="loginModal">Login</button>
       <button onclick="openModal('signup')" aria-haspopup="dialog" aria-controls="signupModal">Sign Up</button>
