@@ -264,15 +264,17 @@
     <div class="courses">
       <div class="course-card">
         <h3>R6 Classes</h3>
-        <p>We turn bots into champs. Learn wall bangs, callouts, and rage-control tactics.</p>
+        <p>We turn controller-throwing bronze bots into callout-speaking, pixel-peeking champions.
+Strategy, aim, and mindgames - all in one course.</p>
       </div>
       <div class="course-card">
         <h3>Rizzology</h3>
-        <p>Struggling with girls? Enroll in our Rizzology class and become HIM.</p>
+        <p>Tired of being left on delivered? We teach the ancient, forbidden art of Rizz - confidence, timing, and the perfect message. Become HIM.</p>
       </div>
       <div class="course-card">
         <h3>Professional Gambling</h3>
-        <p>Lost your Centrelink on roulette? We'll teach you how to do it with confidence.</p>
+        <p>Stop losing your entire Centrelink paycheck on multis.
+We'll show you how to actually bet smart, read odds, and gamble with style - responsibly (kinda).</p>
       </div>
     </div>
   </section>
