@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LZZZ Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: url('logo-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      line-height: 1.6;
+      backdrop-filter: brightness(0.25);
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #00ffff;
+      font-weight: 800;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: 10px;
+      font-weight: 300;
+    }
+
+    nav {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    nav button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background: #00ffff;
+      border: none;
+      color: #111;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    section {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    section h2 {
+      color: #00ffff;
+      margin-bottom: 20px;
+    }
+
+    .courses {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .course-card {
+      background: rgba(30, 30, 30, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      transition: background 0.3s;
+    }
+
+    .course-card:hover {
+      background: rgba(60, 60, 60, 0.95);
+    }
+
+    .course-card h3 {
+      color: #00ffff;
+      margin-bottom: 10px;
+    }
+
+    .course-card p {
+      margin-bottom: 10px;
+    }
+
+    .course-card a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .social {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav button {
+        margin: 5px 0;
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LZZZ Academy</h1>
+    <p>Unlock your potential — or at least your Rizz.</p>
+    <nav>
+      <button onclick="openModal('login')">Login</button>
+      <button onclick="openModal('signup')">Sign Up</button>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Welcome to LZZZ Academy — the ultimate training ground for becoming a next-level human.
+      Whether you're trying to dominate Rainbow Six Siege, master Rizzology, win with your Centrelink paycheck, cure brain cancer, or farm aura like a god — we got you.
+      We don’t just teach — we transform.
+    </p>
+  </section>
+
+  <section id="courses">
+    <h2>Our Courses</h2>
+    <div class="courses">
+      <div class="course-card">
+        <h3>R6 Classes</h3>
+        <p>We turn controller-throwing bronze bots into callout-speaking, pixel-peeking champions. Strategy, aim, and mindgames - all in one course.</p>
+        <a href="r6.html">View Course</a>
+      </div>
+      <div class="course-card">
+        <h3>Rizzology</h3>
+        <p>Tired of being left on delivered? We teach the ancient, forbidden art of Rizz - confidence, timing, and the perfect message. Become HIM.</p>
+        <a href="rizzology.html">View Course</a>
+      </div>
+      <div class="course-card">
+        <h3>Professional Gambling</h3>
+        <p>Stop losing your entire Centrelink on multis. We'll show you how to actually bet smart, read odds, and gamble with style - responsibly (kinda).</p>
+        <a href="gambling.html">View Course</a>
+      </div>
+      <div class="course-card">
+        <h3>Farming Aura 101</h3>
+        <p>Glow harder than a Tesla battery. Learn to raise your vibration, read energy, and farm spiritual XP until your aura breaks servers.</p>
+        <a href="aura.html">View Course</a>
+      </div>
+      <div class="course-card">
+        <h3>Cure Brain Cancer</h3>
+        <p>Ever wondered what it takes to break scientific boundaries? Join the satirical elite and ‘cure brain cancer’—LZZZ style. Absolutely not FDA-approved.</p>
+        <a href="cure.html">View Course</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="social">
+    <h2>Connect With Us</h2>
+    <div class="social">
+      <p>🎮 PSN: <strong>LZZZ-S2</strong></p>
+      <p>📱 TikTok: <strong>@LZZZ-S2</strong></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 LZZZ Academy. All rights reserved.
+  </footer>
+
+</body>
+</html>
