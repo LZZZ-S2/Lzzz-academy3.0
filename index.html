@@ -15,22 +15,21 @@
 
     body {
       font-family: 'Nunito', sans-serif;
-      background: url('logo-bg.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #121212;
       color: #f0f0f0;
       line-height: 1.6;
-      backdrop-filter: brightness(0.25);
     }
 
     header {
-      background: rgba(0, 0, 0, 0.6);
+      background: #1c1c1c;
       padding: 40px 20px;
       text-align: center;
+      border-bottom: 3px solid #ff0000;
     }
 
     header h1 {
       font-size: 3rem;
-      color: #00ffff;
+      color: #ff0000;
       font-weight: 800;
     }
 
@@ -49,24 +48,25 @@
     nav button {
       margin: 0 10px;
       padding: 10px 20px;
-      background: #00ffff;
+      background: #ff0000;
       border: none;
-      color: #111;
+      color: #fff;
       font-weight: 600;
       border-radius: 5px;
       cursor: pointer;
     }
 
     section {
-      background: rgba(0, 0, 0, 0.7);
+      background: #1c1c1c;
       padding: 60px 20px;
       max-width: 900px;
       margin: 20px auto;
       border-radius: 10px;
+      border: 1px solid #2a2a2a;
     }
 
     section h2 {
-      color: #00ffff;
+      color: #ff0000;
       margin-bottom: 20px;
     }
 
@@ -77,30 +77,31 @@
     }
 
     .course-card {
-      background: rgba(30, 30, 30, 0.9);
+      background: #191919;
       padding: 20px;
       border-radius: 8px;
       border: 1px solid #333;
-      transition: background 0.3s;
+      transition: background 0.2s;
     }
 
     .course-card:hover {
-      background: rgba(60, 60, 60, 0.95);
+      background: #222;
     }
 
     .course-card h3 {
-      color: #00ffff;
+      color: #ff0000;
       margin-bottom: 10px;
     }
 
     .course-card p {
-      margin-bottom: 10px;
+      color: #bbb;
     }
 
     .course-card a {
-      color: #00ffff;
+      color: #ff0000;
       text-decoration: none;
-      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
     }
 
     .social {
@@ -111,6 +112,7 @@
     .social p {
       font-size: 1.2rem;
       margin: 10px 0;
+      color: #ccc;
     }
 
     footer {
@@ -118,6 +120,60 @@
       padding: 20px;
       color: #aaa;
       font-size: 0.9rem;
+      background: #111;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #1f1f1f;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      color: white;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 20px;
+      color: #ff0000;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      background: #111;
+      color: white;
+      border: 1px solid #333;
+      border-radius: 5px;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background: #ff0000;
+      border: none;
+      color: white;
+      font-weight: 600;
+      border-radius: 5px;
+    }
+
+    .close {
+      text-align: right;
+      cursor: pointer;
+      color: #aaa;
+      font-size: 20px;
     }
 
     @media (max-width: 600px) {
@@ -143,11 +199,10 @@
   </header>
 
   <section id="about">
-    <h2>About Us</h2>
+    <h2>About LZZZ-S2</h2>
     <p>
-      Welcome to LZZZ Academy — the ultimate training ground for becoming a next-level human.
-      Whether you're trying to dominate Rainbow Six Siege, master Rizzology, win with your Centrelink paycheck, cure brain cancer, or farm aura like a god — we got you.
-      We don’t just teach — we transform.
+      Welcome to LZZZ Academy — powered by LZZZ-S2. This is the ultimate training ground for becoming a next-level human.
+      Whether you're trying to dominate Rainbow Six Siege, master Rizzology, bet smart with your Centrelink, cure brain cancer, or farm aura like a god — we got you.
     </p>
   </section>
 
@@ -156,34 +211,34 @@
     <div class="courses">
       <div class="course-card">
         <h3>R6 Classes</h3>
-        <p>We turn controller-throwing bronze bots into callout-speaking, pixel-peeking champions. Strategy, aim, and mindgames - all in one course.</p>
-        <a href="r6.html">View Course</a>
+        <p>We turn controller-throwing bronze bots into callout-speaking, pixel-peeking champions.</p>
+        <a href="r6.html">View Course →</a>
       </div>
       <div class="course-card">
         <h3>Rizzology</h3>
-        <p>Tired of being left on delivered? We teach the ancient, forbidden art of Rizz - confidence, timing, and the perfect message. Become HIM.</p>
-        <a href="rizzology.html">View Course</a>
+        <p>Tired of being left on delivered? Learn the ancient art of Rizz — confidence, timing, and perfect messaging.</p>
+        <a href="rizzology.html">View Course →</a>
       </div>
       <div class="course-card">
         <h3>Professional Gambling</h3>
-        <p>Stop losing your entire Centrelink on multis. We'll show you how to actually bet smart, read odds, and gamble with style - responsibly (kinda).</p>
-        <a href="gambling.html">View Course</a>
+        <p>Stop losing your entire Centrelink on multis. Learn to bet smart and read odds with style.</p>
+        <a href="gambling.html">View Course →</a>
       </div>
       <div class="course-card">
         <h3>Farming Aura 101</h3>
-        <p>Glow harder than a Tesla battery. Learn to raise your vibration, read energy, and farm spiritual XP until your aura breaks servers.</p>
-        <a href="aura.html">View Course</a>
+        <p>Glow harder than a Tesla battery. Raise your vibration, read energy, and farm spiritual XP.</p>
+        <a href="aura.html">View Course →</a>
       </div>
       <div class="course-card">
         <h3>Cure Brain Cancer</h3>
-        <p>Ever wondered what it takes to break scientific boundaries? Join the satirical elite and ‘cure brain cancer’—LZZZ style. Absolutely not FDA-approved.</p>
-        <a href="cure.html">View Course</a>
+        <p>Not just a meme — unlock advanced spiritual knowledge and techniques beyond science.</p>
+        <a href="cure.html">View Course →</a>
       </div>
     </div>
   </section>
 
   <section id="social">
-    <h2>Connect With Us</h2>
+    <h2>Connect With LZZZ-S2</h2>
     <div class="social">
       <p>🎮 PSN: <strong>LZZZ-S2</strong></p>
       <p>📱 TikTok: <strong>@LZZZ-S2</strong></p>
@@ -191,8 +246,52 @@
   </section>
 
   <footer>
-    &copy; 2025 LZZZ Academy. All rights reserved.
+    &copy; 2025 LZZZ Academy. Built and Owned by LZZZ-S2.
   </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="close" onclick="closeModal('login')">&times;</div>
+      <h3>Login</h3>
+      <input type="text" placeholder="Username" id="loginUser">
+      <input type="password" placeholder="Password" id="loginPass">
+      <button onclick="fakeLogin()">Login</button>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <div class="close" onclick="closeModal('signup')">&times;</div>
+      <h3>Sign Up</h3>
+      <input type="text" placeholder="Username" id="signupUser">
+      <input type="password" placeholder="Password" id="signupPass">
+      <button onclick="fakeSignup()">Sign Up</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(type) {
+      document.getElementById(type + 'Modal').style.display = 'flex';
+    }
+
+    function closeModal(type) {
+      document.getElementById(type + 'Modal').style.display = 'none';
+    }
+
+    function fakeLogin() {
+      const user = document.getElementById('loginUser').value;
+      alert("Welcome back, " + user + "!");
+      closeModal('login');
+    }
+
+    function fakeSignup() {
+      const user = document.getElementById('signupUser').value;
+      alert("Account created for " + user + "!");
+      closeModal('signup');
+    }
+  </script>
 
 </body>
 </html>
