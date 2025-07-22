@@ -1,19 +1,34 @@
-function openModal(type) {
-  document.getElementById(type + 'Modal').style.display = 'flex';
+// 🔊 Play click sound
+function playClick() {
+  const clickSound = new Audio("assets/click.mp3");
+  clickSound.play();
 }
 
-function closeModal(type) {
-  document.getElementById(type + 'Modal').style.display = 'none';
-}
-
+// 🔐 Fake Login System
 function fakeLogin() {
-  const user = document.getElementById('loginUser').value;
-  alert(`Welcome back, ${user}! Time to train like LZZZ-S2.`);
+  const user = document.getElementById("loginUser").value;
+  alert(`Welcome back, ${user || "Gamer"}!`);
   closeModal('login');
 }
 
 function fakeSignup() {
-  const user = document.getElementById('signupUser').value;
-  alert(`Account created for ${user}! Let's get that aura glowing.`);
+  const user = document.getElementById("signupUser").value;
+  alert(`Welcome to LZZZ Academy, ${user || "New Legend"}!`);
   closeModal('signup');
+}
+
+// 🔓 Modal Handlers
+function openModal(type) {
+  document.getElementById(`${type}Modal`).style.display = 'flex';
+}
+
+function closeModal(type) {
+  document.getElementById(`${type}Modal`).style.display = 'none';
+}
+
+// 🔒 Close modals if you click outside
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = 'none';
+  }
 }
