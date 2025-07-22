@@ -1,3 +1,4 @@
+/* Reset and base */
 * {
   margin: 0;
   padding: 0;
@@ -7,154 +8,229 @@
 body {
   font-family: 'Nunito', sans-serif;
   background: #121212;
-  color: #eee;
+  color: #e6e6e6;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
+/* Navbar fixed and styled */
 header {
-  background: #1a0000;
-  padding: 40px 20px;
-  text-align: center;
-  border-bottom: 3px solid #cc0000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(18, 18, 18, 0.95);
+  border-bottom: 2px solid #cc0000;
+  z-index: 1000;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+header.scrolled {
+  background-color: #1a0000cc;
+  box-shadow: 0 2px 8px #cc000044;
 }
 
 header h1 {
-  font-size: 3rem;
-  color: #cc0000;
+  font-size: 1.8rem;
   font-weight: 800;
-  letter-spacing: 4px;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #aaa;
-  margin-top: 10px;
-  font-weight: 300;
+  color: #cc0000;
+  letter-spacing: 3px;
+  user-select: none;
+  cursor: default;
 }
 
 nav {
-  text-align: center;
-  margin: 10px 0;
+  display: flex;
+  gap: 15px;
 }
 
 nav button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background: #cc0000;
-  border: none;
-  color: #eee;
-  font-weight: 600;
-  border-radius: 5px;
+  background: transparent;
+  border: 2px solid #cc0000;
+  color: #cc0000;
+  padding: 10px 22px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  min-width: 100px;
 }
 
 nav button:hover,
 nav button:focus {
-  background-color: #e60000;
+  background-color: #cc0000;
+  color: #121212;
   outline: none;
+  box-shadow: 0 0 10px #cc0000aa;
 }
 
-section {
-  background: #1a1a1a;
-  padding: 60px 20px;
+/* Main content container with padding-top for fixed header */
+main {
+  padding: 100px 20px 40px;
   max-width: 900px;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #cc000033;
+  margin: 0 auto;
+}
+
+/* Section styling */
+section {
+  background: #1c1c1c;
+  border-radius: 12px;
+  padding: 50px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 20px #cc000033;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+section.fade-in {
+  animation-name: fadeInUp;
 }
 
 section h2 {
+  font-weight: 800;
+  font-size: 2rem;
   color: #cc0000;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 3px #660000;
+  margin-bottom: 25px;
+  letter-spacing: 1.5px;
+  user-select: none;
 }
 
+/* Courses list */
 .courses {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .course-card {
   background: #2a0000;
-  padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 25px 30px;
   border: 1px solid #660000;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 12px #66000044;
 }
 
-.course-card:hover {
-  background: #cc0000;
+.course-card:hover,
+.course-card:focus {
+  background-color: #cc0000;
   color: #121212;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px #cc0000cc;
+  outline: none;
 }
 
 .course-card h3 {
-  color: inherit;
-  margin-bottom: 10px;
-  font-weight: 700;
+  font-weight: 900;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  user-select: none;
 }
 
+.course-card p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Social section */
 .social {
   text-align: center;
-  margin-top: 40px;
-}
-
-.social p {
-  font-size: 1.2rem;
-  margin: 10px 0;
+  font-size: 1.3rem;
   color: #cc0000;
+  user-select: none;
 }
 
+.social a {
+  color: #cc0000;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.social a:hover,
+.social a:focus {
+  color: #ff3333;
+  outline: none;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 20px;
-  color: #777;
+  padding: 25px 15px;
   font-size: 0.9rem;
+  color: #666;
+  user-select: none;
   border-top: 1px solid #660000;
+  margin-top: 50px;
 }
 
-/* Modal styles */
+/* Modal base */
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(18, 18, 18, 0.9);
+  z-index: 1500;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(18, 18, 18, 0.9);
+  display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
 }
 
 .modal.show {
-  display: flex;
   opacity: 1;
   pointer-events: auto;
 }
 
 .modal-content {
   background: #2a0000;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 400px;
+  border-radius: 14px;
+  padding: 40px 35px 45px;
+  max-width: 420px;
   width: 100%;
+  box-shadow: 0 0 35px #cc0000cc;
   color: #eee;
   position: relative;
-  box-shadow: 0 0 25px #cc0000bb;
+  transform: translateY(-30px);
+  opacity: 0;
+  animation: modalSlideFadeIn 0.4s forwards ease;
+}
+
+@keyframes modalSlideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal-content h3 {
-  margin-bottom: 20px;
   color: #cc0000;
+  margin-bottom: 25px;
+  font-weight: 900;
+  font-size: 1.8rem;
+  user-select: none;
 }
 
 .modal-content label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-weight: 600;
   color: #cc0000;
   user-select: none;
@@ -163,15 +239,22 @@ footer {
 .modal-content input[type="text"],
 .modal-content input[type="password"] {
   width: 100%;
-  padding: 10px 40px 10px 10px;
-  margin-bottom: 15px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
   background: #330000;
-  color: #eee;
   border: 1px solid #660000;
-  border-radius: 5px;
+  border-radius: 6px;
+  color: #eee;
   font-size: 1rem;
   font-family: 'Nunito', sans-serif;
-  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content input[type="password"]:focus {
+  outline: none;
+  border-color: #ff3333;
+  box-shadow: 0 0 8px #ff3333cc;
 }
 
 .modal-content input[type="checkbox"] {
@@ -180,50 +263,53 @@ footer {
   cursor: pointer;
 }
 
-.modal-content .password-wrapper {
+.password-wrapper {
   position: relative;
 }
 
 .toggle-password {
   position: absolute;
-  right: 10px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   color: #cc0000;
-  font-size: 18px;
+  font-size: 20px;
   user-select: none;
 }
 
 .modal-content button {
   width: 100%;
-  padding: 12px;
-  background: #cc0000;
+  padding: 14px;
+  background-color: #cc0000;
   border: none;
-  color: #eee;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 700;
   font-size: 1.1rem;
+  color: #121212;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .modal-content button:hover,
 .modal-content button:focus {
-  background-color: #e60000;
+  background-color: #ff3333;
   outline: none;
+  box-shadow: 0 0 12px #ff3333cc;
 }
 
 .close {
   position: absolute;
-  top: 12px;
-  right: 15px;
-  cursor: pointer;
+  top: 18px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  font-weight: 900;
   color: #aaa;
-  font-size: 24px;
-  font-weight: 700;
-  user-select: none;
+  cursor: pointer;
   transition: color 0.3s ease;
+  user-select: none;
 }
 
 .close:hover,
@@ -232,21 +318,11 @@ footer {
   outline: none;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  nav button {
-    margin: 5px 0;
-    width: 80%;
-  }
-}
-/* Fade-in animation */
+/* Animations for fadeInUp sections */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -254,54 +330,50 @@ footer {
   }
 }
 
-section {
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0; /* start hidden, fadeInUp anim will reveal */
+/* Fade in each section with delay */
+section:nth-of-type(1) {
+  animation-delay: 0.15s;
+  opacity: 1; /* reset initial opacity */
+  transform: translateY(0);
 }
 
-/* Animate fadeInUp for all sections with delay */
-section:nth-of-type(1) { animation-delay: 0.2s; }
-section:nth-of-type(2) { animation-delay: 0.4s; }
-section:nth-of-type(3) { animation-delay: 0.6s; }
-
-/* Buttons hover effect */
-nav button,
-.modal-content button {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+section:nth-of-type(2) {
+  animation-delay: 0.3s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-nav button:hover,
-nav button:focus,
-.modal-content button:hover,
-.modal-content button:focus {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #e60000aa;
+section:nth-of-type(3) {
+  animation-delay: 0.45s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Course card hover */
-.course-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+section:nth-of-type(4) {
+  animation-delay: 0.6s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.course-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 15px #cc0000aa;
+/* Course card keyboard focus */
+.course-card:focus {
+  outline: 3px solid #ff3333;
+  outline-offset: 3px;
 }
 
-/* Modal animations */
-.modal {
-  transition: opacity 0.3s ease;
-}
+/* Responsive */
+@media (max-width: 720px) {
+  main {
+    padding: 110px 15px 30px;
+    margin: 0 10px;
+  }
 
-.modal.show .modal-content {
-  animation: slideDownFadeIn 0.4s ease forwards;
-  opacity: 0;
-  transform: translateY(-30px);
-}
+  nav button {
+    min-width: 80px;
+    padding: 8px 16px;
+  }
 
-@keyframes slideDownFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  header h1 {
+    font-size: 1.5rem;
   }
 }
