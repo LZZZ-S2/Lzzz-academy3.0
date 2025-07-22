@@ -242,3 +242,66 @@ footer {
     width: 80%;
   }
 }
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0; /* start hidden, fadeInUp anim will reveal */
+}
+
+/* Animate fadeInUp for all sections with delay */
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.4s; }
+section:nth-of-type(3) { animation-delay: 0.6s; }
+
+/* Buttons hover effect */
+nav button,
+.modal-content button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav button:hover,
+nav button:focus,
+.modal-content button:hover,
+.modal-content button:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #e60000aa;
+}
+
+/* Course card hover */
+.course-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.course-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px #cc0000aa;
+}
+
+/* Modal animations */
+.modal {
+  transition: opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+  animation: slideDownFadeIn 0.4s ease forwards;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+@keyframes slideDownFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
