@@ -1,0 +1,64 @@
+<body>
+
+<header>
+  <h1>LZZZ Academy</h1>
+  <nav>
+    <button onclick="openModal('login')" aria-haspopup="dialog" aria-controls="loginModal">Login</button>
+    <button onclick="openModal('signup')" aria-haspopup="dialog" aria-controls="signupModal">Sign Up</button>
+  </nav>
+</header>
+
+<main>
+  <section id="about" tabindex="0" class="fade-in">
+    <h2>About Us</h2>
+    <p>Welcome to LZZZ Academy — the ultimate training ground for becoming a next-level human.
+      Whether you're trying to dominate Rainbow Six Siege, master Rizzology, win with your Centrelink paycheck,
+      cure brain cancer, or farm aura like a god — we got you.
+      We don’t just teach — we transform.
+    </p>
+  </section>
+
+  <section id="courses" tabindex="0" class="fade-in">
+    <h2>Our Courses</h2>
+    <div class="courses">
+      <div class="course-card" tabindex="0" onclick="courseClicked('R6 Classes')">
+        <h3>R6 Classes</h3>
+        <p>We turn controller-throwing bronze bots into callout-speaking, pixel-peeking champions.
+          Strategy, aim, and mindgames - all in one course.</p>
+      </div>
+      <div class="course-card" tabindex="0" onclick="courseClicked('Rizzology')">
+        <h3>Rizzology</h3>
+        <p>Tired of being left on delivered? We teach the ancient, forbidden art of Rizz - confidence, timing, and the perfect message. Become HIM.</p>
+      </div>
+      <div class="course-card" tabindex="0" onclick="courseClicked('Professional Gambling')">
+        <h3>Professional Gambling</h3>
+        <p>Stop losing your entire Centrelink on multis.
+          We'll show you how to actually bet smart, read odds, and gamble with style - responsibly (kinda).</p>
+      </div>
+      <div class="course-card" tabindex="0" onclick="courseClicked('Farming Aura 101')">
+        <h3>Farming Aura 101</h3>
+        <p>Glow harder than a Tesla battery. Learn to raise your vibration, read energy, and farm spiritual XP until your aura breaks servers.</p>
+      </div>
+      <div class="course-card" tabindex="0" onclick="courseClicked('Cure Brain Cancer')">
+        <h3>Cure Brain Cancer</h3>
+        <p>Learn the miraculous skills that can help you cure brain cancer like LZZZ-S2.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="social" tabindex="0" class="fade-in">
+    <h2>Connect With Us</h2>
+    <div class="social">
+      <p>🎮 PSN: <a href="https://playstation.com/user/LZZZ-S2" target="_blank" rel="noopener noreferrer">LZZZ-S2</a></p>
+      <p>📱 TikTok: <a href="https://www.tiktok.com/@LZZZ-S2" target="_blank" rel="noopener noreferrer">@LZZZ-S2</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 LZZZ Academy. All rights reserved.
+</footer>
+
+<!-- Login & Signup Modals here -->
+
+</body>
