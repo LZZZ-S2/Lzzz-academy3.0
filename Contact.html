@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - LZZZ Academy</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/logo.png">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="assets/logo.png" alt="LZZZ-S2 Logo">
+      <h1>LZZZ-S2</h1>
+    </div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="contact.html" class="active">Contact</a>
+      <button onclick="openModal('login')">Login</button>
+      <button onclick="openModal('signup')">Sign Up</button>
+    </nav>
+  </header>
+
+  <main class="content-main">
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <p>Got questions? Want to join the legend himself? Reach out to us:</p>
+      <form id="contactForm" onsubmit="event.preventDefault(); alert('Thanks for reaching out! We’ll get back to you soon.'); this.reset();">
+        <label for="name">Name:</label><br/>
+        <input type="text" id="name" required /><br/><br/>
+        <label for="email">Email:</label><br/>
+        <input type="email" id="email" required /><br/><br/>
+        <label for="message">Message:</label><br/>
+        <textarea id="message" rows="5" required></textarea><br/><br/>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>🎮 PSN: <a href="https://psnprofiles.com/LZZZ-S2" target="_blank">@LZZZ-S2</a></p>
+    <p>📱 TikTok: <a href="https://www.tiktok.com/@LZZZ-S2" target="_blank">@LZZZ-S2</a></p>
+    <p>&copy; 2025 LZZZ Academy. All rights reserved.</p>
+  </footer>
+
+  <!-- Login & Signup modals same as before -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('login')">&times;</span>
+      <h3>Login</h3>
+      <input type="text" placeholder="Username" id="loginUser">
+      <input type="password" placeholder="Password" id="loginPass">
+      <button onclick="fakeLogin()">Login</button>
+    </div>
+  </div>
+
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('signup')">&times;</span>
+      <h3>Sign Up</h3>
+      <input type="text" placeholder="Username" id="signupUser">
+      <input type="password" placeholder="Password" id="signupPass">
+      <button onclick="fakeSignup()">Sign Up</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
