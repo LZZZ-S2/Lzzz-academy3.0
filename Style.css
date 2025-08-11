@@ -1,379 +1,176 @@
-/* Reset and base */
+/* style.css */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   font-family: 'Nunito', sans-serif;
-  background: #121212;
-  color: #e6e6e6;
+  background-color: #0a0a0a;
+  color: #e0f7f7;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
   min-height: 100vh;
 }
 
-/* Navbar fixed and styled */
-header {
+/* Particle background full screen */
+#particles-js {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  background: rgba(18, 18, 18, 0.95);
-  border-bottom: 2px solid #cc0000;
-  z-index: 1000;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s ease;
-  backdrop-filter: saturate(180%) blur(10px);
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: url('logo-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(0.3);
 }
 
-header.scrolled {
-  background-color: #1a0000cc;
-  box-shadow: 0 2px 8px #cc000044;
+/* Content container on top of particles */
+body > *:not(#particles-js) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid #00ffff;
+  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: 800;
-  color: #cc0000;
-  letter-spacing: 3px;
+  color: #00ffff;
+  letter-spacing: 2px;
   user-select: none;
-  cursor: default;
 }
 
-nav {
-  display: flex;
-  gap: 15px;
+header p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #a0e9e9;
+  margin-top: 0.5rem;
+  font-style: italic;
+  user-select: none;
 }
 
-nav button {
-  background: transparent;
-  border: 2px solid #cc0000;
-  color: #cc0000;
-  padding: 10px 22px;
-  font-weight: 700;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 100px;
-}
-
-nav button:hover,
-nav button:focus {
-  background-color: #cc0000;
-  color: #121212;
-  outline: none;
-  box-shadow: 0 0 10px #cc0000aa;
-}
-
-/* Main content container with padding-top for fixed header */
+/* Main content */
 main {
-  padding: 100px 20px 40px;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 960px;
+  margin: 2rem auto 4rem auto;
+  padding: 0 1rem;
 }
 
-/* Section styling */
+/* Sections */
 section {
-  background: #1c1c1c;
+  background: rgba(10, 10, 10, 0.85);
   border-radius: 12px;
-  padding: 50px 30px;
-  margin-bottom: 40px;
-  box-shadow: 0 0 20px #cc000033;
-  opacity: 0;
-  transform: translateY(20px);
-  animation-fill-mode: forwards;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-out;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  transition: box-shadow 0.3s ease;
 }
 
-section.fade-in {
-  animation-name: fadeInUp;
+section:hover {
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.35);
 }
 
 section h2 {
-  font-weight: 800;
-  font-size: 2rem;
-  color: #cc0000;
-  margin-bottom: 25px;
+  color: #00ffff;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #00cccc;
+  padding-bottom: 0.5rem;
   letter-spacing: 1.5px;
   user-select: none;
 }
 
-/* Courses list */
+/* Courses layout */
 .courses {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
 }
 
 .course-card {
-  background: #2a0000;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 1.5rem 1.25rem;
   border-radius: 10px;
-  padding: 25px 30px;
-  border: 1px solid #660000;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 4px 12px #66000044;
-}
-
-.course-card:hover,
-.course-card:focus {
-  background-color: #cc0000;
-  color: #121212;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px #cc0000cc;
-  outline: none;
-}
-
-.course-card h3 {
-  font-weight: 900;
-  font-size: 1.6rem;
-  margin-bottom: 15px;
+  border: 1px solid #005f5f;
+  box-shadow: 0 0 10px #00ffff22;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
 }
 
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #00ffffaa;
+}
+
+.course-card h3 {
+  color: #00ffff;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
 .course-card p {
-  font-weight: 400;
   font-size: 1rem;
+  color: #c0eaea;
   line-height: 1.4;
 }
 
 /* Social section */
 .social {
   text-align: center;
-  font-size: 1.3rem;
-  color: #cc0000;
+  color: #a0e9e9;
+  font-size: 1.2rem;
   user-select: none;
 }
 
-.social a {
-  color: #cc0000;
+.social strong {
+  color: #00ffff;
+}
+
+.social a.social-link {
   text-decoration: none;
+  color: #00ffff;
   font-weight: 700;
-  margin: 0 8px;
   transition: color 0.3s ease;
 }
 
-.social a:hover,
-.social a:focus {
-  color: #ff3333;
+.social a.social-link:hover,
+.social a.social-link:focus {
+  color: #00cccc;
   outline: none;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 25px 15px;
+  padding: 1.5rem 1rem;
   font-size: 0.9rem;
-  color: #666;
-  user-select: none;
-  border-top: 1px solid #660000;
-  margin-top: 50px;
-}
-
-/* Modal base */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1500;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(18, 18, 18, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-}
-
-.modal.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-content {
-  background: #2a0000;
-  border-radius: 14px;
-  padding: 40px 35px 45px;
-  max-width: 420px;
-  width: 100%;
-  box-shadow: 0 0 35px #cc0000cc;
-  color: #eee;
-  position: relative;
-  transform: translateY(-30px);
-  opacity: 0;
-  animation: modalSlideFadeIn 0.4s forwards ease;
-}
-
-@keyframes modalSlideFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.modal-content h3 {
-  color: #cc0000;
-  margin-bottom: 25px;
-  font-weight: 900;
-  font-size: 1.8rem;
+  color: #777;
+  border-top: 1px solid #003737;
   user-select: none;
 }
 
-.modal-content label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #cc0000;
-  user-select: none;
-}
-
-.modal-content input[type="text"],
-.modal-content input[type="password"] {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 20px;
-  background: #330000;
-  border: 1px solid #660000;
-  border-radius: 6px;
-  color: #eee;
-  font-size: 1rem;
-  font-family: 'Nunito', sans-serif;
-  transition: border-color 0.3s ease;
-}
-
-.modal-content input[type="text"]:focus,
-.modal-content input[type="password"]:focus {
-  outline: none;
-  border-color: #ff3333;
-  box-shadow: 0 0 8px #ff3333cc;
-}
-
-.modal-content input[type="checkbox"] {
-  margin-right: 8px;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.password-wrapper {
-  position: relative;
-}
-
-.toggle-password {
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #cc0000;
-  font-size: 20px;
-  user-select: none;
-}
-
-.modal-content button {
-  width: 100%;
-  padding: 14px;
-  background-color: #cc0000;
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #121212;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.modal-content button:hover,
-.modal-content button:focus {
-  background-color: #ff3333;
-  outline: none;
-  box-shadow: 0 0 12px #ff3333cc;
-}
-
-.close {
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 28px;
-  font-weight: 900;
-  color: #aaa;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  user-select: none;
-}
-
-.close:hover,
-.close:focus {
-  color: #cc0000;
-  outline: none;
-}
-
-/* Animations for fadeInUp sections */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Fade in each section with delay */
-section:nth-of-type(1) {
-  animation-delay: 0.15s;
-  opacity: 1; /* reset initial opacity */
-  transform: translateY(0);
-}
-
-section:nth-of-type(2) {
-  animation-delay: 0.3s;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-section:nth-of-type(3) {
-  animation-delay: 0.45s;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-section:nth-of-type(4) {
-  animation-delay: 0.6s;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Course card keyboard focus */
-.course-card:focus {
-  outline: 3px solid #ff3333;
-  outline-offset: 3px;
-}
-
-/* Responsive */
-@media (max-width: 720px) {
-  main {
-    padding: 110px 15px 30px;
-    margin: 0 10px;
-  }
-
-  nav button {
-    min-width: 80px;
-    padding: 8px 16px;
-  }
-
+/* Responsive tweaks */
+@media (max-width: 600px) {
   header h1 {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
+  }
+  section {
+    padding: 2rem 1rem;
+  }
+  .courses {
+    grid-template-columns: 1fr;
   }
 }
