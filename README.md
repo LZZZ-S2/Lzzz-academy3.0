@@ -24,7 +24,7 @@
     }
 
     header {
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
       padding: 40px 20px;
       text-align: center;
       box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
@@ -42,32 +42,6 @@
       color: #eee;
       margin-top: 10px;
       font-weight: 300;
-    }
-
-    nav {
-      text-align: center;
-      margin: 15px 0;
-    }
-
-    nav button {
-      margin: 0 10px;
-      padding: 10px 20px;
-      background: #00ffff;
-      border: none;
-      color: #111;
-      font-weight: 600;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
-    }
-
-    nav button:hover,
-    nav button:focus {
-      background-color: #00cccc;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0, 255, 255, 0.5);
-      outline: none;
     }
 
     section {
@@ -98,18 +72,25 @@
       background: linear-gradient(145deg, rgba(40, 40, 40, 0.95), rgba(20, 20, 20, 0.95));
       padding: 20px;
       border-radius: 12px;
-      border: 1px solid rgba(0, 255, 255, 0.1);
+      border: 2px solid transparent;
+      animation: glowBorder 3s infinite alternate;
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .course-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 6px 15px rgba(0, 255, 255, 0.3);
+      box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
     }
 
     .course-card h3 {
       color: #00ffff;
       margin-bottom: 10px;
+    }
+
+    @keyframes glowBorder {
+      0% { border-color: rgba(0, 255, 255, 0.2); }
+      50% { border-color: rgba(0, 255, 255, 0.6); }
+      100% { border-color: rgba(0, 255, 255, 1); }
     }
 
     .social {
@@ -130,80 +111,10 @@
       margin-top: 20px;
     }
 
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .modal.show {
-      display: flex;
-      opacity: 1;
-      pointer-events: auto;
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal-content {
-      background: #1f1f1f;
-      padding: 30px 30px 40px 30px;
-      border-radius: 15px;
-      max-width: 400px;
-      width: 100%;
-      color: white;
-      position: relative;
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
-      animation: popUp 0.3s ease;
-    }
-
-    .modal-content label {
-      color: #00ffff;
-    }
-
-    .modal-content input[type="text"],
-    .modal-content input[type="password"] {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 5px;
-      color: white;
-    }
-
-    .modal-content button {
-      background: #00ffff;
-      border-radius: 25px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .modal-content button:hover {
-      background-color: #00cccc;
-      transform: translateY(-2px);
-    }
-
-    .close {
-      color: #aaa;
-    }
-
-    .close:hover {
-      color: #00ffff;
-    }
-
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes popUp {
-      from { transform: scale(0.95); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
     }
 
     /* Responsive */
@@ -211,14 +122,56 @@
       header h1 {
         font-size: 2rem;
       }
-      nav button {
-        margin: 5px 0;
-        width: 80%;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Body content remains unchanged -->
+
+  <header>
+    <h1>LZZZ Academy</h1>
+    <p>Unlock your potential.</p>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Welcome to LZZZ Academy — the ultimate training ground for becoming a next-level human.
+      Whether you're trying to dominate Rainbow Six Siege, master Rizzology, win with your Centrelink paycheck, cure brain cancer, or farm aura like a god — we got you.
+      We don’t just teach — we transform.
+    </p>
+  </section>
+
+  <section id="courses">
+    <h2>Our Courses</h2>
+    <div class="courses">
+      <div class="course-card">
+        <h3>R6 Classes</h3>
+        <p>We turn controller-throwing bronze bots into callout-speaking, pixel-peeking champions.
+Strategy, aim, and mindgames - all in one course.</p>
+      </div>
+      <div class="course-card">
+        <h3>Rizzology</h3>
+        <p>Tired of being left on delivered? We teach the ancient, forbidden art of Rizz - confidence, timing, and the perfect message. Become HIM.</p>
+      </div>
+      <div class="course-card">
+        <h3>Professional Gambling</h3>
+        <p>Stop losing your entire Centrelink paycheck on multis.
+We'll show you how to actually bet smart, read odds, and gamble with style - responsibly (kinda).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="social">
+    <h2>Connect With Us</h2>
+    <div class="social">
+      <p>🎮 PSN: <strong>LZZZ-S2</strong></p>
+      <p>📱 TikTok: <strong>@LZZZ-S2</strong></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 LZZZ Academy. All rights reserved.
+  </footer>
+
 </body>
 </html>
