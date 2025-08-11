@@ -1,297 +1,161 @@
-
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LZZZ Academy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Nunito', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-      line-height: 1.6;
-    }
+  <!-- Nunito font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet" />
 
-    header {
-      background: #1c1c1c;
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 3px solid #ff0000;
-    }
+  <!-- Font Awesome for social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p0Cbxf1rL4ykOa2GJUMczLrGQv0i8U6Om7ql5lgW0zp6jwX9NSVk7cH3l3h91Yb4oNYsNxNqE5fSB6xT7b6V4g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-    header h1 {
-      font-size: 3rem;
-      color: #ff0000;
-      font-weight: 800;
-    }
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Three.js (loaded but unused for now) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-    header p {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin-top: 10px;
-      font-weight: 300;
-    }
-
-    nav {
-      text-align: center;
-      margin: 10px 0;
-    }
-
-    nav button {
-      margin: 0 10px;
-      padding: 10px 20px;
-      background: #ff0000;
-      border: none;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    section {
-      background: #1c1c1c;
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 20px auto;
-      border-radius: 10px;
-      border: 1px solid #2a2a2a;
-    }
-
-    section h2 {
-      color: #ff0000;
-      margin-bottom: 20px;
-    }
-
-    .courses {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .course-card {
-      background: #191919;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #333;
-      transition: background 0.2s;
-    }
-
-    .course-card:hover {
-      background: #222;
-    }
-
-    .course-card h3 {
-      color: #ff0000;
-      margin-bottom: 10px;
-    }
-
-    .course-card p {
-      color: #bbb;
-    }
-
-    .course-card a {
-      color: #ff0000;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-    }
-
-    .social {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .social p {
-      font-size: 1.2rem;
-      margin: 10px 0;
-      color: #ccc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #aaa;
-      font-size: 0.9rem;
-      background: #111;
-    }
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #1f1f1f;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 400px;
-      width: 100%;
-      color: white;
-    }
-
-    .modal-content h3 {
-      margin-bottom: 20px;
-      color: #ff0000;
-    }
-
-    .modal-content input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      background: #111;
-      color: white;
-      border: 1px solid #333;
-      border-radius: 5px;
-    }
-
-    .modal-content button {
-      width: 100%;
-      padding: 10px;
-      background: #ff0000;
-      border: none;
-      color: white;
-      font-weight: 600;
-      border-radius: 5px;
-    }
-
-    .close {
-      text-align: right;
-      cursor: pointer;
-      color: #aaa;
-      font-size: 20px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      nav button {
-        margin: 5px 0;
-        width: 80%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Particle background container -->
+  <div id="particles-js"></div>
 
   <header>
     <h1>LZZZ Academy</h1>
-    <p>Unlock your potential — or at least your Rizz.</p>
+    <p>Unlock your potential.</p>
+    <!-- Login/Signup hidden for now
     <nav>
-      <button onclick="openModal('login')">Login</button>
-      <button onclick="openModal('signup')">Sign Up</button>
+      <button onclick="openModal('login')" aria-haspopup="dialog" aria-controls="loginModal">Login</button>
+      <button onclick="openModal('signup')" aria-haspopup="dialog" aria-controls="signupModal">Sign Up</button>
     </nav>
+    -->
   </header>
 
-  <section id="about">
-    <h2>About LZZZ-S2</h2>
-    <p>
-      Welcome to LZZZ Academy — powered by LZZZ-S2. This is the ultimate training ground for becoming a next-level human.
-      Whether you're trying to dominate Rainbow Six Siege, master Rizzology, bet smart with your Centrelink, cure brain cancer, or farm aura like a god — we got you.
-    </p>
-  </section>
+  <main>
+    <section id="about" class="fade-in">
+      <h2>About Us</h2>
+      <p>
+        Welcome to LZZZ Academy — the ultimate training ground for becoming a next-level human.
+        Whether you're trying to dominate Rainbow Six Siege, master Rizzology, win with your Centrelink paycheck, cure brain cancer, or farm aura like a god — we got you.
+        We don’t just teach — we transform.
+      </p>
+    </section>
 
-  <section id="courses">
-    <h2>Our Courses</h2>
-    <div class="courses">
-      <div class="course-card">
-        <h3>R6 Classes</h3>
-        <p>We turn controller-throwing bronze bots into callout-speaking, pixel-peeking champions.</p>
-        <a href="r6.html">View Course →</a>
+    <section id="courses" class="fade-in">
+      <h2>Our Courses</h2>
+      <div class="courses">
+        <div class="course-card">
+          <h3>R6 Classes</h3>
+          <p>We turn controller-throwing bronze bots into callout-speaking, pixel-peeking champions.
+Strategy, aim, and mindgames - all in one course.</p>
+        </div>
+        <div class="course-card">
+          <h3>Rizzology</h3>
+          <p>Tired of being left on delivered? We teach the ancient, forbidden art of Rizz - confidence, timing, and the perfect message. Become HIM.</p>
+        </div>
+        <div class="course-card">
+          <h3>Professional Gambling</h3>
+          <p>Stop losing your entire Centrelink paycheck on multis.
+We'll show you how to actually bet smart, read odds, and gamble with style - responsibly (kinda).</p>
+        </div>
       </div>
-      <div class="course-card">
-        <h3>Rizzology</h3>
-        <p>Tired of being left on delivered? Learn the ancient art of Rizz — confidence, timing, and perfect messaging.</p>
-        <a href="rizzology.html">View Course →</a>
-      </div>
-      <div class="course-card">
-        <h3>Professional Gambling</h3>
-        <p>Stop losing your entire Centrelink on multis. Learn to bet smart and read odds with style.</p>
-        <a href="gambling.html">View Course →</a>
-      </div>
-      <div class="course-card">
-        <h3>Farming Aura 101</h3>
-        <p>Glow harder than a Tesla battery. Raise your vibration, read energy, and farm spiritual XP.</p>
-        <a href="aura.html">View Course →</a>
-      </div>
-      <div class="course-card">
-        <h3>Cure Brain Cancer</h3>
-        <p>Not just a meme — unlock advanced spiritual knowledge and techniques beyond science.</p>
-        <a href="cure.html">View Course →</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="social">
-    <h2>Connect With LZZZ-S2</h2>
-    <div class="social">
-      <p>🎮 PSN: <strong>LZZZ-S2</strong></p>
-      <p>📱 TikTok: <strong>@LZZZ-S2</strong></p>
-    </div>
-  </section>
+    <section id="social" class="fade-in">
+      <h2>Connect With Us</h2>
+      <div class="social">
+        <p>🎮 PSN: <strong>LZZZ-S2</strong></p>
+        <p>📱 TikTok: <strong><span title="TikTok username lzzz_s2 (hidden)">@lzzz_s2</span></strong></p>
+        <!-- Hidden clickable TikTok link for future use -->
+        <!-- <p><a href="https://www.tiktok.com/@lzzz_s2" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-tiktok"></i> @lzzz_s2
+        </a></p> -->
+      </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 LZZZ Academy. Built and Owned by LZZZ-S2.
+    &copy; 2025 LZZZ Academy. All rights reserved.
   </footer>
 
-  <!-- Login Modal -->
-  <div class="modal" id="loginModal">
-    <div class="modal-content">
-      <div class="close" onclick="closeModal('login')">&times;</div>
-      <h3>Login</h3>
-      <input type="text" placeholder="Username" id="loginUser">
-      <input type="password" placeholder="Password" id="loginPass">
-      <button onclick="fakeLogin()">Login</button>
-    </div>
-  </div>
-
-  <!-- Signup Modal -->
-  <div class="modal" id="signupModal">
-    <div class="modal-content">
-      <div class="close" onclick="closeModal('signup')">&times;</div>
-      <h3>Sign Up</h3>
-      <input type="text" placeholder="Username" id="signupUser">
-      <input type="password" placeholder="Password" id="signupPass">
-      <button onclick="fakeSignup()">Sign Up</button>
-    </div>
-  </div>
-
   <script>
-    function openModal(type) {
-      document.getElementById(type + 'Modal').style.display = 'flex';
-    }
+    // Initialize particles.js
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: "#00ffff" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+          polygon: { nb_sides: 5 },
+        },
+        opacity: {
+          value: 0.3,
+          random: true,
+          anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00ffff",
+          opacity: 0.25,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: false, mode: "push" },
+          resize: true,
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 0.4 } },
+          bubble: { distance: 400, size: 40, duration: 2, opacity: 0.8, speed: 3 },
+          repulse: { distance: 200, duration: 0.4 },
+          push: { particles_nb: 4 },
+          remove: { particles_nb: 2 },
+        },
+      },
+      retina_detect: true,
+    });
 
-    function closeModal(type) {
-      document.getElementById(type + 'Modal').style.display = 'none';
-    }
-
-    function fakeLogin() {
-      const user = document.getElementById('loginUser').value;
-      alert("Welcome back, " + user + "!");
-      closeModal('login');
-    }
-
-    function fakeSignup() {
-      const user = document.getElementById('signupUser').value;
-      alert("Account created for " + user + "!");
-      closeModal('signup');
-    }
+    // Initialize ScrollReveal animations
+    ScrollReveal().reveal('.fade-in', {
+      duration: 1000,
+      distance: '30px',
+      easing: 'ease-in-out',
+      origin: 'bottom',
+      interval: 200,
+    });
   </script>
-
 </body>
 </html>
